@@ -1,8 +1,6 @@
 // enums3.rs
 // Address all the TODOs to make the tests pass!
 
-// I AM NOT DONE
-
 enum Message {
     Move(Point),
     Echo(String),
@@ -43,7 +41,7 @@ impl State {
             Message::Move(point) => self.move_position(point),
             Message::Echo(string) => self.echo(string),
             Message::ChangeColor(color) => self.change_color(color),
-            Message::Quit => self.quit()
+            Message::Quit => self.quit(),
         }
     }
 }
