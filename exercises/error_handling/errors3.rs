@@ -6,19 +6,27 @@
 
 // I AM NOT DONE
 
+use std::io::Error;
 use std::num::ParseIntError;
 
-fn main() {
+pub fn main() -> Result<(), Error> {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
-    let cost = total_cost(pretend_user_input)?;
+    let cost = total_cost(pretend_user_input);
+
+    match cost {
+        Ok(c) => Ok(c),
+        Err(e) => Err(e),
+    }
 
     if cost > tokens {
         println!("You can't afford that many!");
+        Err(Error)
     } else {
         tokens -= cost;
         println!("You now have {} tokens.", tokens);
+        Ok(())
     }
 }
 

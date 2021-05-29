@@ -36,8 +36,7 @@ impl Default for Person {
 // I AM NOT DONE
 
 impl From<&str> for Person {
-    fn from(s: &str) -> Person {
-    }
+    fn from(s: &str) -> Person {}
 }
 
 fn main() {
@@ -52,6 +51,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn test_default() {
         // Test that the default person is 30 year old John
